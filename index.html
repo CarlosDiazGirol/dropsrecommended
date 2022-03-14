@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +32,6 @@
         <h3>Cantidad de gotas calculada para tu objetivo y peso</h3>
         <div class="drops-result-container">
           <div class="drops-result-text">
-            
             <p id="drops-selection"></p>
           </div>
           <div id="drops-result" class="drops-result"></div>
@@ -55,24 +54,28 @@
       "weight": ["11", "12-20", "21-38", "29-68", "69-108", "108"],
       "cbd": ["Aceite CBD 5%", "Aceite CBD 10%", "Aceite CBD 15%"],
       "Aceite CBD 5%": [
-      {"soft": ["2", "3", "5", "6", "9", "11"]},
-      {"medium": ["3", "5", "6", "8", "11", "15"]},
-      {"hard": ["5","6","8","9","14","23"]}
+        {"soft": ["2", "3", "5", "6", "9", "11"]},
+        {"medium": ["3", "5", "6", "8", "11", "15"]},
+        {"hard": ["5","6","8","9","14","23"]}
       ], 
       "Aceite CBD 10%": [
-      {"soft": ["1", "2", "2", "3", "5", "6"]},
-      {"medium": ["2", "2", "3", "3", "6", "8"]},
-      {"hard": ["2","3","3","5","7","11"]}
+        {"soft": ["1", "2", "2", "3", "5", "6"]},
+        {"medium": ["2", "2", "3", "3", "6", "8"]},
+        {"hard": ["2","3","3","5","7","11"]}
       ],
       "Aceite CBD 15%": [
-      {"soft": ["1", "1", "2", "2", "3", "4"]},
-      {"medium": ["1", "2", "2", "3", "4", "5"]},
-      {"hard": ["2","2","3","3","5","8"]}
+        {"soft": ["1", "1", "2", "2", "3", "4"]},
+        {"medium": ["1", "2", "2", "3", "4", "5"]},
+        {"hard": ["2","2","3","3","5","8"]}
       ]
     }
+
+    
     //getValue
     const getResultValues = () => {
-    return getValues.innerHTML = `${getFocus.value} | ${getCBD.value} | ${getWeight.value == "108" ? "Más de" + " " + getWeight.value + " " + "Kg" : getWeight.value + " " + "Kg" }`
+      (window.innerWidth > 600)
+      ? getValues.innerHTML = `${getFocus.value} | ${getCBD.value} | ${getWeight.value == "108" ? "Más de" + " " + getWeight.value + " " + "Kg" : getWeight.value + " " + "Kg" }`
+      : getValues.innerHTML = `- ${getFocus.value} </br> - ${getCBD.value} </br> - ${getWeight.value == "108" ? "Más de" + " " + getWeight.value + " " + "Kg" : getWeight.value + " " + "Kg" }`
     }
     // Options components
     for (let i = 0; i < values.weight.length; i++) {

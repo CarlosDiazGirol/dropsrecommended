@@ -111,7 +111,7 @@ select {
 }
 @media (max-width: 600px) {
   h3 {
-    margin: 0;
+    margin: 0 0 10px 0;
   }
   .drops-result-container {
     display: flex;
