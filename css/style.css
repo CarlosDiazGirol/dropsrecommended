@@ -11,6 +11,7 @@ select {
   margin: 0 0 10px;
   padding: 10px;
   font-size: 1em;
+  color: black;
   border-radius: 5px;
   border: none;
   /* background: rgb(228 228 231); */
@@ -50,6 +51,7 @@ select {
   margin: 10px 0;
   padding: 10px;
   width: 100px;
+  height: 35px;
   border: none;
   border-radius: 5px;
   color: white;
@@ -108,13 +110,32 @@ select {
   to {visibility: 1; margin: -10px 0 0 0;}
 }
 @media (max-width: 600px) {
+  .drops-result-container {
+    display: flex;
+  }
+  .drops-result-text {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+  .drops-result-text h3 {
+    margin: 0;
+  }
+
   .drops-image {
     display: none;
   }
   .drops-settings {
     width: 100%;
+    margin: 0 0 20px 0;
+  }
+  .drops-settings h3 {
+    margin: 10px 0;
   }
   .drops-calculate-content {
     justify-content: center;
+  }
+  .drops-container h2 {
+    font-size: 2em;
+    margin: 10px 0;
   }
 }
