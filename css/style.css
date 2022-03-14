@@ -138,4 +138,12 @@ select {
     font-size: 2em;
     margin: 10px 0;
   }
+  .drops-total {
+    width: 120px;
+    height: 75px;
+    text-align: center;
+  }
+  .drops-total h4 {
+    font-size: 3em;
+  }
 }
