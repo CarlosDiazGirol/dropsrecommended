@@ -110,6 +110,9 @@ select {
   to {visibility: 1; margin: -10px 0 0 0;}
 }
 @media (max-width: 600px) {
+  h3 {
+    margin: 0;
+  }
   .drops-result-container {
     display: flex;
   }
@@ -117,10 +120,6 @@ select {
     padding: 10px;
     font-size: 0.9em;
   }
-  .drops-result-text h3 {
-    margin: 0;
-  }
-
   .drops-image {
     display: none;
   }
@@ -139,7 +138,7 @@ select {
     margin: 10px 0;
   }
   .drops-total {
-    width: 120px;
+    width: 90px;
     height: 75px;
     text-align: center;
   }
