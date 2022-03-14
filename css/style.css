@@ -117,7 +117,7 @@ select {
     display: flex;
   }
   .drops-result-text {
-    padding: 10px;
+    padding: 0 15px 0 0;
     font-size: 0.9em;
   }
   .drops-image {
@@ -134,7 +134,8 @@ select {
     justify-content: center;
   }
   .drops-container h2 {
-    font-size: 2em;
+    font-size: 1.4em;
+    text-align: left;
     margin: 10px 0;
   }
   .drops-total {
