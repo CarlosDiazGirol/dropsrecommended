@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,100&display=swap');
 
-section {
+section#drops {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
   font-family: 'Roboto', sans-serif;
 }
 select {
@@ -115,6 +114,7 @@ select {
   }
   .drops-result-container {
     display: flex;
+    justify-content: space-between; 
   }
   .drops-result-text {
     padding: 0 15px 0 0;
