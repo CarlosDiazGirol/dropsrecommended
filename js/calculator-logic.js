@@ -6,10 +6,11 @@ const getDropsImage = document.getElementById("drops-image")
 const getValues     = document.getElementById("drops-selection")
 const getDrops      = document.getElementById("drops")
 const values = {
-  "focus": ["Bienestar y afecciones suaves", "Bienestar y afecciones moderadas", "Alivio de afecciones graves"],
+  "focusResult": ["Bienestar y afecciones suaves", "Bienestar y afecciones moderadas", "Alivio de afecciones graves"],
   "pain": ["soft", "medium", "hard"],
   "weight": ["11", "12-20", "21-38", "29-68", "69-108", "108"],
   "cbd": ["Aceite CBD 5%", "Aceite CBD 10%", "Aceite CBD 15%"],
+  "images": ["Aceite-CBD-5.png", "menta10-uai-min.png", "Aceite-CBD-15.png"],
   "Aceite CBD 5%": [
     {"soft": ["2", "3", "5", "6", "9", "11"]},
     {"medium": ["3", "5", "6", "8", "11", "15"]},
@@ -26,91 +27,71 @@ const values = {
     {"hard": ["2","2","3","3","5","8"]}
   ]
 }
-// const createOptionsWeight = (id, arr) => {
-//   switch(arr[i]) {
-//     case "11":
-//       id.innerHTML += `<option value="${arr[i]}">${arr[i]} Kg</option>`
-//     break;
-//     case "108":
-//       id.innerHTML += `<option value="${arr[i]}">Más de ${arr[i]} Kg</option>`
-//     break;
-//     default:
-//       id.innerHTML += `<option value="${arr[i]}">Entre ${arr[i]} Kg</option>`
-//   }
-
-// }
-// const createOptions = (id, arr) => {
-// for (let i = 0; i < arr.length; i++) {
-//   if (arr == values.weight) {
-//     createOptionsWeight(id, arr)
-//   } else {
-//     id.innerHTML += `<option value="${arr[i]}">${arr[i]}</option>`
-//   }
-// }
-// }
-
-
-// Options components
+const {weight, focusResult, cbd, pain, images} = values
 const createOptionsWeight = (id, arr) => {
-  for (let i = 0; i < arr.length; i++) {
-    switch(arr[i]) {
-      case "11":
-        id.innerHTML += `<option value="${arr[i]}">${arr[i]} Kg</option>`
-      break;
-      case "108":
-        id.innerHTML += `<option value="${arr[i]}">Más de ${arr[i]} Kg</option>`
-      break;
-      default:
-        id.innerHTML += `<option value="${arr[i]}">Entre ${arr[i]} Kg</option>`
-    }
+  const text = `<option value="${arr}">`
+  switch(arr) {
+    case "11":
+      id.innerHTML += `${text}${arr} Kg</option>`
+    break;
+    case "108":
+      id.innerHTML += `${text}Más de ${arr} Kg</option>`
+    break;
+    default:
+      id.innerHTML += `${text}Entre ${arr} Kg</option>`
   }
 }
 const createOptions = (id, arr) => {
   for (let i = 0; i < arr.length; i++) {
-    id.innerHTML += `<option value="${arr[i]}">${arr[i]}</option>`
+    if (arr == weight) {
+      createOptionsWeight(id, arr[i])
+    } else {
+      id.innerHTML += `<option value="${arr[i]}">${arr[i]}</option>`
+    }
   }
 }
-if (getDrops)
-createOptionsWeight(getWeight, values.weight)
-createOptions(getFocus, values.focus)
-createOptions(getCBD, values.cbd)
+if (getDrops) {
+  createOptions(getFocus, focusResult)
+  createOptions(getWeight, weight)
+  createOptions(getCBD, cbd)
+}
 
-//getValue
 const getResultValues = () => {
   (window.innerWidth > 600)
   ? getValues.innerHTML = `${getFocus.value} | ${getCBD.value} | ${getWeight.value == "108" ? "Más de" + " " + getWeight.value + " " + "Kg" : getWeight.value + " " + "Kg" }`
   : getValues.innerHTML = `- ${getFocus.value} </br> - ${getCBD.value} </br> - ${getWeight.value == "108" ? "Más de" + " " + getWeight.value + " " + "Kg" : getWeight.value + " " + "Kg" }`
 }
 const result = (focusValor, weightValor, cbdValor) => {
-  const focusPosition = values.focus.indexOf(focusValor)
-  const weightPosition = values.weight.indexOf(weightValor)
-  const drops = values[cbdValor][focusPosition][values.pain[focusPosition]][weightPosition]
+  const focusPosition = focusResult.indexOf(focusValor)
+  const weightPosition = weight.indexOf(weightValor)
+  const drops = values[cbdValor][focusPosition][pain[focusPosition]][weightPosition]
   getResultValues()
-  
+  const text = `<div class="drops-total"><h4>${drops}</h4>` 
   switch(drops) {
     case "1":
-      getResult.innerHTML = `<div class="drops-total"><h4>${drops}</h4> <p>Gota al día</p></div>`
+      getResult.innerHTML = `${text}<p>Gota al día</p></div>`
     break;
     case "2":
-      getResult.innerHTML = `<div class="drops-total"><h4>${drops}</h4> <p>Gotas/día (en 2 veces)</p></div>`
+      getResult.innerHTML = `${text}<p>Gotas/día (en 2 veces)</p></div>`
     break;
     default:
-      getResult.innerHTML = `<div class="drops-total"><h4>${drops}</h4> <p>Gotas/día (en 3 veces)</p></div>`
+      getResult.innerHTML = `${text}<p>Gotas/día (en 3 veces)</p></div>`
   }
 }
-result(getFocus.value, getWeight.value, getCBD.value)
 
 const changeProduct = (value) => {
-  const resultValues = values.cbd
+  const text = '<img class="drops-appear"'
   switch(value) {
-    case resultValues[0]:
-      getDropsImage.innerHTML = '<img class="drops-appear" src="./img/Aceite-CBD-5.png"/>'
+    case cbd[0]:
+    getDropsImage.innerHTML = `${text} src="./img/${images[0]}"/>`
     break;
-    case resultValues[1]:
-    getDropsImage.innerHTML = '<img class="drops-appear" src="./img/menta10-uai-min.png"/>'
+    case cbd[1]:
+    getDropsImage.innerHTML = `${text} src="./img/${images[1]}"/>`
     break;
-    case resultValues[2]:
-    getDropsImage.innerHTML = '<img class="drops-appear" src="./img/Aceite-CBD-15.png"/>'
+    case cbd[2]:
+    getDropsImage.innerHTML = `${text} src="./img/${images[2]}"/>`
     break;
   }
 }
+
+result(getFocus.value, getWeight.value, getCBD.value)
