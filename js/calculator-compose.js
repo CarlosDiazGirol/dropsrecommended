@@ -9,7 +9,7 @@ const calculatorCompose = (drops) => {
                     <h2>Calcula la cantidad de gotas</h2>
                     <div class="drops-content">
                       <div id="drops-image" class="drops-image">
-                        <img class="drops-appear" src="./img/Aceite-CBD-5.png">
+                        <img class="drops-appear" src="https://profesorcbd.com/wp-content/uploads/2022/03/5.png">
                       </div>
                       <div class="drops-settings">
                         <h3>¿Cuál va a ser el uso?</h3>

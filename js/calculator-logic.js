@@ -10,7 +10,7 @@ const values = {
   "pain": ["soft", "medium", "hard"],
   "weight": ["11", "12-20", "21-38", "29-68", "69-108", "108"],
   "cbd": ["Aceite CBD 5%", "Aceite CBD 10%", "Aceite CBD 15%"],
-  "images": ["Aceite-CBD-5.png", "menta10-uai-min.png", "Aceite-CBD-15.png"],
+  "images": ["5.png", "10.png", "15.png"],
   "Aceite CBD 5%": [
     {"soft": ["2", "3", "5", "6", "9", "11"]},
     {"medium": ["3", "5", "6", "8", "11", "15"]},
@@ -81,15 +81,16 @@ const result = (focusValor, weightValor, cbdValor) => {
 
 const changeProduct = (value) => {
   const text = '<img class="drops-appear"'
+  const urlIMG = 'https://profesorcbd.com/wp-content/uploads/2022/03/'
   switch(value) {
     case cbd[0]:
-    getDropsImage.innerHTML = `${text} src="./img/${images[0]}"/>`
+    getDropsImage.innerHTML = `${text} src="${urlIMG}${images[0]}"/>`
     break;
     case cbd[1]:
-    getDropsImage.innerHTML = `${text} src="./img/${images[1]}"/>`
+    getDropsImage.innerHTML = `${text} src="${urlIMG}${images[1]}"/>`
     break;
     case cbd[2]:
-    getDropsImage.innerHTML = `${text} src="./img/${images[2]}"/>`
+    getDropsImage.innerHTML = `${text} src="${urlIMG}${images[2]}"/>`
     break;
   }
 }
