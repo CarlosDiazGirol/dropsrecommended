@@ -4,7 +4,7 @@ const calculatorCompose = (drops) => {
     const text = `<div class="drops-main">
                   <div class="drops-container">
                     <div class="drops-logo">
-                      <img src="./img/hakunaoil-new.png" alt="Hakuna-oil">
+                      <img src="https://profesorcbd.com/wp-content/uploads/2022/03/hakunaoil-new.png" alt="Hakuna-oil">
                     </div>
                     <h2>Calcula la cantidad de gotas</h2>
                     <div class="drops-content">
