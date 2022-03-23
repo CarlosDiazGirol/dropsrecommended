@@ -118,4 +118,9 @@ const changeProduct = (value) => {
   }
 }
 
+
+if (window.location.hash.includes("#drops")) {
+  window.scrollTo(0, 230);
+}
+
 result(getFocus.value, getWeight.value, getCBD.value)
