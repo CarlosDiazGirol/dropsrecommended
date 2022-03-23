@@ -6,7 +6,7 @@ const getDropsImage = document.getElementById("drops-image")
 const getValues     = document.getElementById("drops-selection")
 const getDrops      = document.getElementById("drops")
 const values = {
-  "focusResult": ["Bienestar y afecciones suaves", "Bienestar y afecciones moderadas", "Alivio de afecciones graves"],
+  "focusResult": ["Leve", "Moderada", "Alta"],
   "pain": ["soft", "medium", "hard"],
   "weight": ["11", "12-20", "21-38", "29-68", "69-108", "108"],
   "cbd": ["Aceite CBD 5%", "Aceite CBD 10%", "Aceite CBD 15%"],

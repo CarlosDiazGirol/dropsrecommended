@@ -5,6 +5,7 @@ section#drops {
   align-items: center;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
+  margin: 20px 0;
 }
 #drops select {
   margin: 0 0 10px;
@@ -41,10 +42,12 @@ section#drops {
 }
 .drops-content {
   display: flex;
+  justify-content: space-around;
 }
 .drops-settings {
   display: flex;
   flex-direction: column;
+  width: 285px;
 }
 .drops-calculate {
   margin: 10px 0;
