@@ -37,6 +37,7 @@ const createOptionsWeight = (id, arr) => {
     break;
     case "29-68":
       id.innerHTML += `${text} selected>Entre ${arr} Kg</option>`
+    break;
     case "108":
       id.innerHTML += `${text}>Más de ${arr} Kg</option>`
     break;
