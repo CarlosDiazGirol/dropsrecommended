@@ -10,7 +10,7 @@ const values = {
   "pain": ["soft", "medium", "hard"],
   "weight": ["20", "21-38", "29-68", "69-108", "108"],
   "cbd": ["Aceite CBD 5%", "Aceite CBD 5% con GABA", "Aceite CBD 10%", "Aceite CBD 10% con GABA", "Aceite CBD 10% con menta", "Aceite CBD 15%"],
-  "images": ["5.png", "10.png", "15.png", "5.png", "10.png", "15.png"],
+  "images": ["5-2.png", "5gaba.png", "10-3.png", "10gaba.png", "10menta.png", "15-2.png", "30-2.png"],
   "Aceite CBD 5%": [
     {"soft": ["3", "5", "6", "9", "11"]},
     {"medium": ["5", "6", "8", "11", "15"]},

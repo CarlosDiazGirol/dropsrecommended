@@ -74,6 +74,7 @@ section#drops {
 .drops-image {
   position: relative;
   width: 200px;
+  height: 400px;
   padding: 10px;
 }
 .drops-appear {
