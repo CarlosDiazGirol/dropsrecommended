@@ -66,12 +66,12 @@ const getResultValues = () => {
 }
 
 const changeValue = (value) => {
-  if (value.includes("5%")) {
-    return "Aceite CBD 5%"
+  if (value.includes("15%")) {
+    return "Aceite CBD 15%"
   } else if (value.includes("10%")) {
     return "Aceite CBD 10%"
-  } else {
-    return "Aceite CBD 15%"
+  } else if (value.includes("5%")) {
+    return "Aceite CBD 5%"
   }
 }
 
