@@ -131,7 +131,7 @@ const changeProduct = (value) => {
   }
 }
 
-if (window.location.hash == "#drops") {
+if (window.location.includes == "drops") {
   document.getElementById('drops').scrollIntoView({
     behavior: "smooth",
     block: "end"
