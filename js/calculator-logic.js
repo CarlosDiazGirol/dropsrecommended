@@ -131,7 +131,7 @@ const changeProduct = (value) => {
   }
 }
 
-if (window.location.includes == "drops") {
+if (window.location.href.includes == "drops") {
   document.getElementById('drops').scrollIntoView({
     behavior: "smooth",
     block: "end"
