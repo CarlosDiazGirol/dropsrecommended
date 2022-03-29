@@ -9,7 +9,7 @@ const values = {
   "focusResult": ["Leve", "Moderada", "Alta"],
   "pain": ["soft", "medium", "hard"],
   "weight": ["20", "21-38", "29-68", "69-108", "108"],
-  "cbd": ["Aceite CBD 5%", "Aceite CBD 5% con GABA", "Aceite CBD 10%", "Aceite CBD 10% con GABA", "Aceite CBD 10% con menta", "Aceite CBD 15%"],
+  "cbd": ["Aceite CBD 5%", "Aceite CBD 5% con GABA", "Aceite CBD 10%", "Aceite CBD 10% con GABA", "Aceite CBD 10% con menta", "Aceite CBD 15%", "Aceite CBD 30%"],
   "images": ["5-2.png", "5gaba.png", "10-3.png", "10gaba.png", "10menta.png", "15-2.png", "30-2.png"],
   "Aceite CBD 5%": [
     {"soft": ["3", "5", "6", "9", "11"]},
@@ -25,10 +25,15 @@ const values = {
     {"soft": ["1", "2", "2", "3", "4"]},
     {"medium": ["2", "2", "3", "4", "5"]},
     {"hard": ["2","3","3","5","8"]}
+  ],
+  "Aceite CBD 30%": [
+    {"soft": ["1", "1", "1", "2", "2"]},
+    {"medium": ["1", "1", "2", "2", "3"]},
+    {"hard": ["1","2","2","3","4"]}
   ]
 }
 const {weight, focusResult, cbd, pain, images} = values
-const [cbd5, cbd5Gaba, cbd10, cbd10Gaba, cbd10Menta, cbd15] = images
+const [cbd5, cbd5Gaba, cbd10, cbd10Gaba, cbd10Menta, cbd15, cbd30] = images
 const createOptionsWeight = (id, arr) => {
   const text = `<option value="${arr}"`
   switch(arr) {
@@ -45,6 +50,7 @@ const createOptionsWeight = (id, arr) => {
       id.innerHTML += `${text}>Entre ${arr} Kg</option>`
   }
 }
+
 const createOptions = (id, arr) => {
   for (let i = 0; i < arr.length; i++) {
     if (arr == weight) {
@@ -54,6 +60,7 @@ const createOptions = (id, arr) => {
     }
   }
 }
+
 if (getDrops) {
   createOptions(getFocus, focusResult)
   createOptions(getWeight, weight)
@@ -67,7 +74,9 @@ const getResultValues = () => {
 }
 
 const changeValue = (value) => {
-  if (value.includes("15%")) {
+  if (value.includes("30%")) {
+    return "Aceite CBD 30%"
+  } else if (value.includes("15%")) {
     return "Aceite CBD 15%"
   } else if (value.includes("10%")) {
     return "Aceite CBD 10%"
@@ -116,12 +125,17 @@ const changeProduct = (value) => {
     case cbd[5]:
     getDropsImage.innerHTML = `${text} src="${urlIMG}${cbd15}"/>`
     break;
+    case cbd[6]:
+    getDropsImage.innerHTML = `${text} src="${urlIMG}${cbd30}"/>`
+    break;
   }
 }
 
-
-if (window.location.hash.includes("#drops")) {
-  window.scrollTo(0, 230);
+if (window.location.hash == "#drops") {
+  document.getElementById('drops').scrollIntoView({
+    behavior: "smooth",
+    block: "end"
+  });
 }
 
 result(getFocus.value, getWeight.value, getCBD.value)
