@@ -139,7 +139,6 @@ const scroll = () => {
 }
 
 if (window.location.href.includes("?drops")) {
-  setTimeout(scroll, 2000);
+  setTimeout(scroll, 1000);
 }
-
 result(getFocus.value, getWeight.value, getCBD.value)
