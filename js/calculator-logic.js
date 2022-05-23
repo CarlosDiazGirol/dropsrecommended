@@ -1,144 +1,305 @@
-const getWeight     = document.getElementById("weight")
-const getFocus      = document.getElementById("focus")
-const getCBD        = document.getElementById("cbd")
-const getResult     = document.getElementById("drops-result")
-const getDropsImage = document.getElementById("drops-image") 
-const getValues     = document.getElementById("drops-selection")
-const getDrops      = document.getElementById("drops")
+const getFocus = document.getElementById("focus")
+const getType  = document.getElementById("type")
+const getTypeContent  = document.getElementById("typeContent")
+const getTypeSelect  = document.getElementById("typeSelect")
+const resultOil = document.getElementById("resultOil")
+const getDropsImage = document.getElementById("drops-image")
+
+const url = "https://profesorcbd.com"
+const urlIMG = `${url}/wp-content/uploads/2022/03/`
+const images = ["5-2.png", "5gaba.png", "10-3.png", "10gaba.png", "10menta.png", "15-2.png", "30-2.png", "nala.png"]
+const [cbd5, cbd5Gaba, cbd10, cbd10Gaba, cbd10Menta, cbd15, cbd30, nala] = images
+const urls = [
+  "/aceite-cbd-premium-hakuna-oil-5-full-spectrum-base-mct/",
+  "/aceite-cbd-5-premium-hakuna-oil-buenas-nochezzz-con-gaba/",
+  "aceite-cbd-premium-hakuna-oil-al-10-full-spectrum-con-base-mct/",
+  "/aceite-cbd-10-premium-hakuna-oil-buenas-nochezzz-con-gaba/",
+  "/aceite-cbd-premium-hakuna-oil-al-10-con-aroma-a-menta/",
+  "/aceite-cbd-premium-hakuna-oil-al-15-full-spectrum-con-base-mct/",
+  "/aceite-cbd-premium-hakuna-oil-al-30-full-spectrum-con-base-mct/",
+  "/aceite-de-cbd-para-mascotas-isolado-sin-thc-nalatales/"
+]
+const [cbd5URL, cbd5GabaURL, cbd10URL, cbd10GabaURL, cbd10MentaUL, cbd15URL, cbd30URL, nalaURL] = urls
 const values = {
-  "focusResult": ["Leve", "Moderada", "Alta"],
-  "pain": ["soft", "medium", "hard"],
-  "weight": ["20", "21-38", "29-68", "69-108", "108"],
-  "cbd": ["Aceite CBD 5%", "Aceite CBD 5% con GABA", "Aceite CBD 10%", "Aceite CBD 10% con GABA", "Aceite CBD 10% con menta", "Aceite CBD 15%", "Aceite CBD 30%"],
-  "images": ["5-2.png", "5gaba.png", "10-3.png", "10gaba.png", "10menta.png", "15-2.png", "30-2.png"],
-  "Aceite CBD 5%": [
-    {"soft": ["3", "5", "6", "9", "11"]},
-    {"medium": ["5", "6", "8", "11", "15"]},
-    {"hard": ["6","8","9","14","23"]}
-  ],
-  "Aceite CBD 10%": [
-    {"soft": ["2", "2", "3", "5", "6"]},
-    {"medium": ["2", "3", "3", "6", "8"]},
-    {"hard": ["3","3","5","7","11"]}
-  ],
-  "Aceite CBD 15%": [
-    {"soft": ["1", "2", "2", "3", "4"]},
-    {"medium": ["2", "2", "3", "4", "5"]},
-    {"hard": ["2","3","3","5","8"]}
-  ],
-  "Aceite CBD 30%": [
-    {"soft": ["1", "1", "1", "2", "2"]},
-    {"medium": ["1", "1", "2", "2", "3"]},
-    {"hard": ["1","2","2","3","4"]}
+  "focusResult": [
+    { 
+      "name": "Vitalidad",
+      "question": "¿Dónde te ves más identificado?",
+      "result": 
+      [
+        {
+          "name": "Estoy en un bache",
+          "description": "Tienes dos formas de pasar el bache: en bici o todoterreno. Este aceite es lo segundo.",
+          "oil": "Full Sprectrum 10%",
+          "img": `${urlIMG}${cbd10}`,
+          "buy": `${url}${cbd10URL}`,
+        },
+        {
+          "name": "Lo veo todo negro",
+          "description": "¡Estas gotas son experas en ahuyentar nubarrones!",
+          "oil": "Full Sprectrum 15%",
+          "img": `${urlIMG}${cbd15}`,
+          "buy": `${url}${cbd15URL}` 
+        },
+        {
+          "name": "Estoy bien pero podría estar mejor",
+          "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
+          "oil": "Full Sprectrum 5%",
+          "img": `${urlIMG}${cbd5}`,
+          "buy": `${url}${cbd5URL}` 
+        }
+      ]
+    },
+    { 
+      "name": "Sueño",
+      "question": "¿Cuál es tu problema de sueño?",
+      "result": 
+      [
+        {
+          "name": "Duermo pero no descanso",
+          "description": "Una solución natural para mejorar la calidad de tu sueño #NoMorePastis.",
+          "oil": "Buenas Noches 10%",
+          "img": `${urlIMG}${cbd10Gaba}`,
+          "buy": `${url}${cbd10GabaURL}`
+        },
+        {
+          "name": "Estoy empezando a dormir mal ahora",
+          "description": "No te resignes a contar ovejas. Con este aceite, sólo contarás gotas.",
+          "oil": "Buenas Noches 5%",
+          "img": `${urlIMG}${cbd5Gaba}`,
+          "buy": `${url}${cbd5GabaURL}`
+        },
+        {
+          "name": "Tengo insomnio, nada me va bien",
+          "description": "Duerme como antes de que todo se estropeara. Con este aceite, es cuestión de días.",
+          "oil": "Buenas Noches 10%",
+          "img": `${urlIMG}${cbd10Gaba}`,
+          "buy": `${url}${cbd10GabaURL}` 
+        }
+      ]
+    },
+    { 
+      "name": "Rendimiento Deportivo",
+      "question": "¿En qué quieres centrarte?",
+      "result": 
+      [
+        {
+          "name": "Descargar músculos después de entrenar",
+          "description": "Con este aceite, las piernas te irán solas… hasta las cañas post-gym.",
+          "oil": "Full Sprectrum 10%",
+          "img": `${urlIMG}${cbd10}`,
+          "buy": `${url}${cbd10URL}` 
+        },
+        {
+          "name": "Recuperar rápido después de un buen entreno",
+          "description": "Frena la inflamación generalizada con nuestras gotas anti-agujetas. ¡Mañana sí vuelves!",
+          "oil": "Full Sprectrum 15%",
+          "img": `${urlIMG}${cbd15}`,
+          "buy": `${url}${cbd15URL}` 
+        },
+        {
+          "name": "Quiero descansar bien después de entrenar",
+          "description": "Este aceite bajará tus revoluciones de forma 100% natural.",
+          "oil": "Full Sprectrum 10%",
+          "img": `${urlIMG}${cbd10}`,
+          "buy": `${url}${cbd10URL}` 
+        }
+      ]
+    },
+    { 
+      "name": "Estrés/Ansiedad",
+      "question": "¿Cuál es el origen del estrés?",
+      "result": 
+      [
+        
+        {
+          "name": "Por una situación personal o laboral",
+          "description": "Se sabe que el chocolate y el CBD alivian el estrés. Pero el segundo no engorda. ¿Te animas?",
+          "oil": "Full Sprectrum 10%",
+          "img": `${urlIMG}${cbd10}`,
+          "buy": `${url}${cbd10URL}` 
+        },
+        {
+          "name": "Llevo angustiado muchísimo tiempo",
+          "description": "¡Tenenos las únicas gotas que descolman el vaso!",
+          "oil": "Full Sprectrum 15%",
+          "img": `${urlIMG}${cbd15}`,
+          "buy": `${url}${cbd15URL}` 
+        },
+        {
+          "name": "Estoy bien, pero me gustaria encontrarme mejor",
+          "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
+          "oil": "Full Sprectrum 5%",
+          "img": `${urlIMG}${cbd5}`,
+          "buy": `${url}${cbd5URL}` 
+        }
+      ]
+    },
+    { "name": "Inmunidad",
+    "result": 
+      [
+        {
+          "description": "El aceite que pondrá en guardia a tu sistema endocannabinoide. Stop virus.",
+          "oil": "del 5%",
+          "img": `${urlIMG}${cbd5}`,
+          "buy": `${url}${cbd5URL}`  
+        }
+      ]
+    },
+    { "name": "Concentración",
+      "result":
+      [
+        { 
+          "description": "Ni comer rabillos de pasas ni hacer sodukus: de las soluciones que avala la ciencia, este aceite es la más sencilla.",
+          "oil": "del 5%",
+          "img": `${urlIMG}${cbd5}`,
+          "buy": `${url}${cbd5URL}` 
+        }
+      ]
+    },
+    { 
+      "name": "Dolores",
+      "question": "¿En qué consiste ese dolor?",
+      "result": 
+      [
+        {
+          "name": "Son molestias articulares",
+          "description": "La vida con dolor de rodillas es la vida peor. Mejora la tuya con este aceite.",
+          "oil": "Full Sprectrum 10%",
+          "img": `${urlIMG}${cbd10}`,
+          "buy": `${url}${cbd10URL}` 
+        },
+        {
+          "name": "Son los dolores menstruales",
+          "description": "¿Tú qué tienes: sistema endocannabinoide o sistema ibuprofenoide? Pues eso.",
+          "oil": "Full Sprectrum 5%",
+          "img": `${urlIMG}${cbd5}`,
+          "buy": `${url}${cbd5URL}` 
+        },
+        {
+          "name": "Padezco dolores crónicos",
+          "description": "Si duele, que vuele.",
+          "oil": "Full Sprectrum 15%",
+          "img": `${urlIMG}${cbd15}`,
+          "buy": `${url}${cbd15URL}` 
+        },
+        {
+          "name": "Son molestias muy severas",
+          "description": "Prueba nuestro aceite de las grandes soluciones.",
+          "oil": "Full Sprectrum 30%",
+          "img": `${urlIMG}${cbd30}`,
+          "buy": `${url}${cbd30URL}` 
+        }
+      ]
+    },
+    { "name": "Vida de mi mascota",
+      "result": 
+      [
+        {
+          "description": "Ayuda a tu mascota a ser su mejor versión con este producto natural. ¡Se lo debes!",
+          "oil": "de Nala",
+          "img": `${url}/wp-content/uploads/2022/05/${nala}`,
+          "buy": `${url}${nalaURL}`
+        }
+      ]
+    }
   ]
 }
-const {weight, focusResult, cbd, pain, images} = values
-const [cbd5, cbd5Gaba, cbd10, cbd10Gaba, cbd10Menta, cbd15, cbd30] = images
-const createOptionsWeight = (id, arr) => {
-  const text = `<option value="${arr}"`
-  switch(arr) {
-    case "20":
-      id.innerHTML += `${text}>Hasta ${arr} Kg</option>`
-    break;
-    case "29-68":
-      id.innerHTML += `${text} selected>Entre ${arr} Kg</option>`
-    break;
-    case "108":
-      id.innerHTML += `${text}>Más de ${arr} Kg</option>`
-    break;
-    default:
-      id.innerHTML += `${text}>Entre ${arr} Kg</option>`
-  }
+
+const visibility = (value, type) => value.style.display = type
+
+const createResult = (title, description, buy) => {
+  const template = `
+                    <h4>Aceite ${title}</h4>
+                    <p>${description}</p>
+                    <a href=${buy} target="_blank">
+                      <input 
+                        class="drops-calculate" 
+                        type="button" 
+                        value="Comprar" />
+                    </a>
+                   `
+  return template
 }
 
-const createOptions = (id, arr) => {
+const getResult = (value, arr, beforeValue) => {
   for (let i = 0; i < arr.length; i++) {
-    if (arr == weight) {
-      createOptionsWeight(id, arr[i])
-    } else {
-      id.innerHTML += `<option value="${arr[i]}">${arr[i]}</option>`
+    const result = arr[i]
+    if (result.name == value && !result.result[0].name) {
+      visibility(getTypeContent, 'none')
+      resultOil.innerHTML = createResult(result.result[0].oil, result.result[0].description, result.result[0].buy)
+      getDropsImage.innerHTML = `<img class="drops-appear" src=${result.result[0].img}></img>`
+    } else if (result.name == beforeValue) {
+      for(var j = 0; j < result.result.length; j++) {
+        const solution = result.result[j]
+        if (solution.name == value) {
+          visibility(resultOil, 'block')
+          resultOil.innerHTML = createResult(solution.oil, solution.description, solution.buy)
+          getDropsImage.innerHTML = `<img class="drops-appear" src=${solution.img}></img>`
+        }
+      }
     }
   }
 }
 
-if (getDrops) {
-  createOptions(getFocus, focusResult)
-  createOptions(getWeight, weight)
-  createOptions(getCBD, cbd)
-}
-
-const getResultValues = () => {
-  (window.innerWidth > 600)
-  ? getValues.innerHTML = `${getFocus.value} | ${getCBD.value} | ${getWeight.value == "108" ? "Más de" + " " + getWeight.value + " " + "Kg" : getWeight.value + " " + "Kg" }`
-  : getValues.innerHTML = `- ${getFocus.value} </br> - ${getCBD.value} </br> - ${getWeight.value == "108" ? "Más de" + " " + getWeight.value + " " + "Kg" : getWeight.value + " " + "Kg" }`
-}
-
-const changeValue = (value) => {
-  if (value.includes("30%")) {
-    return "Aceite CBD 30%"
-  } else if (value.includes("15%")) {
-    return "Aceite CBD 15%"
-  } else if (value.includes("10%")) {
-    return "Aceite CBD 10%"
-  } else if (value.includes("5%")) {
-    return "Aceite CBD 5%"
+const getQuestion = (value, arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    const result = arr[i]
+    if (result.name.includes(value)) {
+      visibility(getTypeContent, 'block')
+      visibility(resultOil, 'none')
+      getType.innerHTML = `<h3>${result.question}</h3>`
+      createOptions(getTypeSelect, result.result)
+      
+    }
   }
 }
 
-const result = (focusValor, weightValor, cbdValor) => {
-  const focusPosition = focusResult.indexOf(focusValor)
-  const weightPosition = weight.indexOf(weightValor)
-  const drops = values[changeValue(cbdValor)][focusPosition][pain[focusPosition]][weightPosition]
-  getResultValues()
-  const text = `<div class="drops-total"><h4>${drops}</h4>` 
-  switch(drops) {
-    case "1":
-      getResult.innerHTML = `${text}<p>Gota al día</p></div>`
-    break;
-    case "2":
-      getResult.innerHTML = `${text}<p>Gotas/día (en 2 veces)</p></div>`
-    break;
-    default:
-      getResult.innerHTML = `${text}<p>Gotas/día (en 3 veces)</p></div>`
+const createOptions = (id, arr) => {
+  id.innerHTML = `<option>Elige una opción</option>`
+  for (let i = 0; i < arr.length; i++) {
+    id.innerHTML += `<option value="${arr[i].name}">${arr[i].name}</option>`
   }
 }
 
-const changeProduct = (value) => {
-  const text = '<img class="drops-appear"'
-  const urlIMG = 'https://profesorcbd.com/wp-content/uploads/2022/03/'
+const createType = (value, arr, beforeValue) => {
   switch(value) {
-    case cbd[0]:
-    getDropsImage.innerHTML = `${text} src="${urlIMG}${cbd5}"/>`
+    case "Vitalidad":
+    case "Sueño":
+    case "Rendimiento Deportivo":
+    case "Estrés/Ansiedad":
+    case "Dolores":
+      getQuestion(value, arr)
     break;
-    case cbd[1]:
-    getDropsImage.innerHTML = `${text} src="${urlIMG}${cbd5Gaba}"/>`
+    case "Inmunidad":
+    case "Concentración":
+    case "Vida de mi mascota":
+      getResult(value, arr)
     break;
-    case cbd[2]:
-    getDropsImage.innerHTML = `${text} src="${urlIMG}${cbd10}"/>`
-    break;
-    case cbd[3]:
-    getDropsImage.innerHTML = `${text} src="${urlIMG}${cbd10Gaba}"/>`
-    break;
-    case cbd[4]:
-    getDropsImage.innerHTML = `${text} src="${urlIMG}${cbd10Menta}"/>`
-    break;
-    case cbd[5]:
-    getDropsImage.innerHTML = `${text} src="${urlIMG}${cbd15}"/>`
-    break;
-    case cbd[6]:
-    getDropsImage.innerHTML = `${text} src="${urlIMG}${cbd30}"/>`
+    // Vitalidad
+    case "Estoy en un bache":
+    case "Lo veo todo negro":
+    case "Estoy bien pero podría estar mejor":
+    // Sueño
+    case "Duermo pero no descanso":
+    case "Estoy empezando a dormir mal ahora":
+    case "Tengo insomnio, nada me va bien":
+    // Rendimiento deportivo
+    case "Descargar músculos después de entrenar":
+    case "Recuperar rápido después de un buen entreno":
+    case "Quiero descansar bien después de entrenar":
+    // Estrés/Ansiedad
+    case "Por una situación personal o laboral":
+    case "Llevo angustiado muchísimo tiempo":
+    case "Estoy bien, pero me gustaria encontrarme mejor":
+    // Dolores
+    case "Son molestias articulares":
+    case "Son los dolores menstruales":
+    case "Padezco dolores crónicos":
+    case "Son molestias muy severas":
+      getResult(value, arr, beforeValue)
     break;
   }
 }
 
-const scroll = () => {
-  document.getElementById('drops').scrollIntoView({
-    behavior: "smooth",
-    block: "end"
-  });
-}
-
-if (window.location.href.includes("?drops")) {
-  setTimeout(scroll, 2000);
-}
-result(getFocus.value, getWeight.value, getCBD.value)
+createOptions(getFocus, values.focusResult)

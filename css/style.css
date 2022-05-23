@@ -11,6 +11,7 @@ section#drops {
   margin: 20px 0;
 }
 #drops select {
+  width: 100%;
   margin: 0 0 10px;
   padding: 10px;
   font-size: 1em;
@@ -153,4 +154,24 @@ section#drops {
   .drops-total h4 {
     font-size: 3em;
   }
+}
+
+/* new css */
+
+.typeContent {
+  display: none;
+}
+.resultOil a {
+  display: flex;
+  justify-content: end;
+}
+
+.resultOil h4 {
+  font-size: 2em;
+  margin: 20px 0 10px 0;
+  color: #354237;
+}
+
+.recomended {
+  height: 650px;
 }
