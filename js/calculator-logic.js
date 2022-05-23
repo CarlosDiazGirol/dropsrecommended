@@ -272,11 +272,6 @@ const createType = (value, arr, beforeValue) => {
     case "Dolores":
       getQuestion(value, arr)
     break;
-    case "Inmunidad":
-    case "Concentración":
-    case "Vida de mi mascota":
-      getResult(value, arr)
-    break;
     default:
       getResult(value, arr, beforeValue)
     break;
