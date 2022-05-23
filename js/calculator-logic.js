@@ -1,9 +1,10 @@
-const getFocus = document.getElementById("focus")
+const getFocusOil = document.getElementById("focus-oil")
 const getType  = document.getElementById("type")
 const getTypeContent  = document.getElementById("typeContent")
 const getTypeSelect  = document.getElementById("typeSelect")
 const resultOil = document.getElementById("resultOil")
-const getDropsImage = document.getElementById("drops-image")
+const getDropsImageOil = document.getElementById("drops-image-oil")
+
 
 const url = "https://profesorcbd.com"
 const urlIMG = `${url}/wp-content/uploads/2022/03/`
@@ -228,14 +229,14 @@ const getResult = (value, arr, beforeValue) => {
     if (result.name == value && !result.result[0].name) {
       visibility(getTypeContent, 'none')
       resultOil.innerHTML = createResult(result.result[0].oil, result.result[0].description, result.result[0].buy)
-      getDropsImage.innerHTML = `<img class="drops-appear" src=${result.result[0].img}></img>`
+      getDropsImageOil.innerHTML = `<img class="drops-appear" src=${result.result[0].img}></img>`
     } else if (result.name == beforeValue) {
       for(var j = 0; j < result.result.length; j++) {
         const solution = result.result[j]
         if (solution.name == value) {
           visibility(resultOil, 'block')
           resultOil.innerHTML = createResult(solution.oil, solution.description, solution.buy)
-          getDropsImage.innerHTML = `<img class="drops-appear" src=${solution.img}></img>`
+          getDropsImageOil.innerHTML = `<img class="drops-appear" src=${solution.img}></img>`
         }
       }
     }
@@ -276,30 +277,10 @@ const createType = (value, arr, beforeValue) => {
     case "Vida de mi mascota":
       getResult(value, arr)
     break;
-    // Vitalidad
-    case "Estoy en un bache":
-    case "Lo veo todo negro":
-    case "Estoy bien pero podría estar mejor":
-    // Sueño
-    case "Duermo pero no descanso":
-    case "Estoy empezando a dormir mal ahora":
-    case "Tengo insomnio, nada me va bien":
-    // Rendimiento deportivo
-    case "Descargar músculos después de entrenar":
-    case "Recuperar rápido después de un buen entreno":
-    case "Quiero descansar bien después de entrenar":
-    // Estrés/Ansiedad
-    case "Por una situación personal o laboral":
-    case "Llevo angustiado muchísimo tiempo":
-    case "Estoy bien, pero me gustaria encontrarme mejor":
-    // Dolores
-    case "Son molestias articulares":
-    case "Son los dolores menstruales":
-    case "Padezco dolores crónicos":
-    case "Son molestias muy severas":
+    default:
       getResult(value, arr, beforeValue)
     break;
   }
 }
 
-createOptions(getFocus, values.focusResult)
+createOptions(getFocusOil, values.focusResult)
