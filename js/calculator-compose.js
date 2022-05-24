@@ -12,7 +12,7 @@ const calculatorCompose = (drops) => {
           <img class="" src="https://profesorcbd.com/wp-content/uploads/2022/05/isolado.png">
         </div>
         <div class="drops-settings">
-          <h3>Intensidad del problema que quieres solucionar</h3>
+          <h3>¿Qué quieres solucionar?</h3>
           <select id="focus-oil" class="focus-oil" onchange="createType(getFocusOil.value, values.focusResult)" name="focus"></select>
           <div id="typeContent" class="typeContent">
             <div id="type"></div>
