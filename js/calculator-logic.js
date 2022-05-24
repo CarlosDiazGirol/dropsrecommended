@@ -215,7 +215,7 @@ const createResult = (title, description, buy) => {
                     <p>${description}</p>
                     <a href=${buy} target="_blank">
                       <input 
-                        class="drops-calculate" 
+                        class="drops-buy" 
                         type="button" 
                         value="Comprar" />
                     </a>
@@ -254,7 +254,6 @@ const getQuestion = (value, arr) => {
       // getDropsImageOil.style.visibility = 'hidden' // cambiar por fadeout
       getType.innerHTML = `<h3>${result.question}</h3>`
       createOptions(getTypeSelect, result.result)
-      
     }
   }
 }

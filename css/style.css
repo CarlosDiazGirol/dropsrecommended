@@ -38,7 +38,7 @@ section#drops, section#drops-recommended {
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.44); 
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.44);
   color: #354237;
-  background: linear-gradient(220.64deg, #e1eed8 0%, #a6bf96 100%);
+  background: linear-gradient(220.64deg, #e1eed8 0%, #E2EED8 100%);
 }
 .drops-container h2 {
   font-size: 2.2em;
@@ -52,6 +52,17 @@ section#drops, section#drops-recommended {
   display: flex;
   flex-direction: column;
   width: 285px;
+}
+.drops-buy {
+  margin: 10px 0;
+  padding: 10px;
+  width: 200px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  background-color: #354237;
 }
 .drops-calculate {
   margin: 10px 0;
@@ -176,7 +187,7 @@ section#drops, section#drops-recommended {
 }
 .resultOil a {
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 
 .resultOil h4 {
