@@ -83,6 +83,13 @@ section#drops, section#drops-recommended {
   animation: fadein normal 2s;
   animation-fill-mode: forwards;
 }
+
+.drops-disappear {
+  position: relative;
+  animation: fadeout normal 2s;
+  animation-fill-mode: forwards;
+}
+
 .drops-total {
   display: flex;
   flex-direction: column;
@@ -112,6 +119,12 @@ section#drops, section#drops-recommended {
   from {opacity: 0; right: 30px;}
   to {visibility: 1; right: 10px;}
 }
+
+@keyframes fadeout {
+  from {visibility: 1; right: 10px;}
+  to {opacity: 0; right: 30px;}
+}
+
 @keyframes fadeinNumber {
   from {opacity: 0; margin: 0;}
   to {visibility: 1; margin: -10px 0 0 0;}

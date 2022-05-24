@@ -5,7 +5,6 @@ const getTypeSelect  = document.getElementById("typeSelect")
 const resultOil = document.getElementById("resultOil")
 const getDropsImageOil = document.getElementById("drops-image-oil")
 
-
 const url = "https://profesorcbd.com"
 const urlIMG = `${url}/wp-content/uploads/2022/03/`
 const images = ["5-2.png", "5gaba.png", "10-3.png", "10gaba.png", "10menta.png", "15-2.png", "30-2.png", "nala.png"]
@@ -207,6 +206,7 @@ const values = {
   ]
 }
 
+const appear = () => document.querySelector("img.drops-appear") ? document.querySelector("img.drops-appear").classList.add("drops-disappear") : undefined ;
 const visibility = (value, type) => value.style.display = type
 
 const createResult = (title, description, buy) => {
@@ -234,7 +234,8 @@ const getResult = (value, arr, beforeValue) => {
       for(var j = 0; j < result.result.length; j++) {
         const solution = result.result[j]
         if (solution.name == value) {
-          visibility(resultOil, 'block')
+          visibility(resultOil, 'block');
+          // getDropsImageOil.style.visibility = 'visible' // cambiar por fadein
           resultOil.innerHTML = createResult(solution.oil, solution.description, solution.buy)
           getDropsImageOil.innerHTML = `<img class="drops-appear" src=${solution.img}></img>`
         }
@@ -247,8 +248,10 @@ const getQuestion = (value, arr) => {
   for (let i = 0; i < arr.length; i++) {
     const result = arr[i]
     if (result.name.includes(value)) {
-      visibility(getTypeContent, 'block')
-      visibility(resultOil, 'none')
+      visibility(getTypeContent, 'block');
+      visibility(resultOil, 'none');
+      appear();
+      // getDropsImageOil.style.visibility = 'hidden' // cambiar por fadeout
       getType.innerHTML = `<h3>${result.question}</h3>`
       createOptions(getTypeSelect, result.result)
       
