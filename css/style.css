@@ -188,6 +188,7 @@ section#drops, section#drops-recommended {
 .resultOil a {
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 
 .resultOil h4 {

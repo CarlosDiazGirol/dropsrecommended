@@ -21,9 +21,9 @@ const urls = [
 ]
 const text = [
   "Full Sprectrum 5%",
-  "Buenas Noches 5%",
+  "Buenas nochezzz 5%",
   "Full Sprectrum 10%",
-  "Buenas Noches 10%",
+  "Buenas nochezzz 10%",
   "de Menta 10%",
   "Full Sprectrum 15%",
   "Full Sprectrum 30%",
@@ -147,7 +147,7 @@ const values = {
       ]
     },
     { "name": "Inmunidad",
-    "result": 
+      "result": 
       [
         {
           "description": "El aceite que pondrá en guardia a tu sistema endocannabinoide. Stop virus.",
@@ -225,9 +225,10 @@ const createResult = (title, description, buy) => {
                     <h4>Aceite ${title}</h4>
                     <p>${description}</p>
                     <a href=${buy} target="_blank">
-                      <input 
+                      <input
+                      id=recommended-${title.replace(/\s+/g, '-')} 
                         class="drops-buy" 
-                        type="button" 
+                        type="button"
                         value="Comprar" />
                     </a>
                    `
