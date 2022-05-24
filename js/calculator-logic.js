@@ -19,7 +19,18 @@ const urls = [
   "/aceite-cbd-premium-hakuna-oil-al-30-full-spectrum-con-base-mct/",
   "/aceite-de-cbd-para-mascotas-isolado-sin-thc-nalatales/"
 ]
-const [cbd5URL, cbd5GabaURL, cbd10URL, cbd10GabaURL, cbd10MentaUL, cbd15URL, cbd30URL, nalaURL] = urls
+const text = [
+  "Full Sprectrum 5%",
+  "Buenas Noches 5%",
+  "Full Sprectrum 10%",
+  "Buenas Noches 10%",
+  "de Menta 10%",
+  "Full Sprectrum 15%",
+  "Full Sprectrum 30%",
+  "de Nala"
+]
+const [cbd5URL, cbd5GabaURL, cbd10URL, cbd10GabaURL, cbd10MentaURL, cbd15URL, cbd30URL, nalaURL] = urls
+const [cbd5Text, cbd5GabaText, cbd10Text, cbd10GabaText, cbd10MentaText, cbd15Text, cbd30Text, nalaText] = text
 const values = {
   "focusResult": [
     { 
@@ -30,21 +41,21 @@ const values = {
         {
           "name": "Estoy en un bache",
           "description": "Tienes dos formas de pasar el bache: en bici o todoterreno. Este aceite es lo segundo.",
-          "oil": "Full Sprectrum 10%",
+          "oil": `${cbd10Text}`,
           "img": `${urlIMG}${cbd10}`,
           "buy": `${url}${cbd10URL}`,
         },
         {
           "name": "Lo veo todo negro",
           "description": "¡Estas gotas son experas en ahuyentar nubarrones!",
-          "oil": "Full Sprectrum 15%",
+          "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
         },
         {
           "name": "Estoy bien pero podría estar mejor",
           "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
-          "oil": "Full Sprectrum 5%",
+          "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}` 
         }
@@ -58,21 +69,21 @@ const values = {
         {
           "name": "Duermo pero no descanso",
           "description": "Una solución natural para mejorar la calidad de tu sueño #NoMorePastis.",
-          "oil": "Buenas Noches 10%",
+          "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}`
         },
         {
           "name": "Estoy empezando a dormir mal ahora",
           "description": "No te resignes a contar ovejas. Con este aceite, sólo contarás gotas.",
-          "oil": "Buenas Noches 5%",
+          "oil": `${cbd5GabaText}`,
           "img": `${urlIMG}${cbd5Gaba}`,
           "buy": `${url}${cbd5GabaURL}`
         },
         {
           "name": "Tengo insomnio, nada me va bien",
           "description": "Duerme como antes de que todo se estropeara. Con este aceite, es cuestión de días.",
-          "oil": "Buenas Noches 10%",
+          "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}` 
         }
@@ -86,21 +97,21 @@ const values = {
         {
           "name": "Descargar músculos después de entrenar",
           "description": "Con este aceite, las piernas te irán solas… hasta las cañas post-gym.",
-          "oil": "Full Sprectrum 10%",
+          "oil": `${cbd10Text}`,
           "img": `${urlIMG}${cbd10}`,
           "buy": `${url}${cbd10URL}` 
         },
         {
           "name": "Recuperar rápido después de un buen entreno",
           "description": "Frena la inflamación generalizada con nuestras gotas anti-agujetas. ¡Mañana sí vuelves!",
-          "oil": "Full Sprectrum 15%",
+          "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
         },
         {
           "name": "Quiero descansar bien después de entrenar",
           "description": "Este aceite bajará tus revoluciones de forma 100% natural.",
-          "oil": "Buenas Noches 10%",
+          "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}` 
         }
@@ -115,21 +126,21 @@ const values = {
         {
           "name": "Por una situación personal o laboral",
           "description": "Se sabe que el chocolate y el CBD alivian el estrés. Pero el segundo no engorda. ¿Te animas?",
-          "oil": "Full Sprectrum 10%",
+          "oil": `${cbd10Text}`,
           "img": `${urlIMG}${cbd10}`,
           "buy": `${url}${cbd10URL}` 
         },
         {
           "name": "Llevo angustiado muchísimo tiempo",
           "description": "¡Tenenos las únicas gotas que descolman el vaso!",
-          "oil": "Full Sprectrum 15%",
+          "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
         },
         {
           "name": "Estoy bien, pero me gustaria encontrarme mejor",
           "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
-          "oil": "Full Sprectrum 5%",
+          "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}` 
         }
@@ -140,7 +151,7 @@ const values = {
       [
         {
           "description": "El aceite que pondrá en guardia a tu sistema endocannabinoide. Stop virus.",
-          "oil": "del 5%",
+          "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}`  
         }
@@ -151,7 +162,7 @@ const values = {
       [
         { 
           "description": "Ni comer rabillos de pasas ni hacer sodukus: de las soluciones que avala la ciencia, este aceite es la más sencilla.",
-          "oil": "del 5%",
+          "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}` 
         }
@@ -165,28 +176,28 @@ const values = {
         {
           "name": "Son molestias articulares",
           "description": "La vida con dolor de rodillas es la vida peor. Mejora la tuya con este aceite.",
-          "oil": "Full Sprectrum 10%",
+          "oil": `${cbd10Text}`,
           "img": `${urlIMG}${cbd10}`,
           "buy": `${url}${cbd10URL}` 
         },
         {
           "name": "Son los dolores menstruales",
           "description": "¿Tú qué tienes: sistema endocannabinoide o sistema ibuprofenoide? Pues eso.",
-          "oil": "Full Sprectrum 5%",
+          "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}` 
         },
         {
           "name": "Padezco dolores crónicos",
           "description": "Si duele, que vuele.",
-          "oil": "Full Sprectrum 15%",
+          "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
         },
         {
           "name": "Son molestias muy severas",
           "description": "Prueba nuestro aceite de las grandes soluciones.",
-          "oil": "Full Sprectrum 30%",
+          "oil": `${cbd30Text}`,
           "img": `${urlIMG}${cbd30}`,
           "buy": `${url}${cbd30URL}` 
         }
@@ -197,7 +208,7 @@ const values = {
       [
         {
           "description": "Ayuda a tu mascota a ser su mejor versión con este producto natural. ¡Se lo debes!",
-          "oil": "de Nala",
+          "oil": `${nalaText}`,
           "img": `${url}/wp-content/uploads/2022/05/${nala}`,
           "buy": `${url}${nalaURL}`
         }
