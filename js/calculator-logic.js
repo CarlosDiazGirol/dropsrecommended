@@ -100,7 +100,7 @@ const values = {
         {
           "name": "Quiero descansar bien después de entrenar",
           "description": "Este aceite bajará tus revoluciones de forma 100% natural.",
-          "oil": "Full Sprectrum 10%",
+          "oil": "Buenas Noches 10%",
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}` 
         }
