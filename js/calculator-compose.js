@@ -6,7 +6,7 @@ const calculatorCompose = (drops) => {
       <div class="drops-logo">
         <img src="https://profesorcbd.com/wp-content/uploads/2022/03/hakunaoil-new.png" alt="Hakuna-oil">
       </div>
-      <h2>Selector de aceites</h2>
+      <h2>Un aceite a tu medida</h2>
       <div class="drops-content">
         <div id="drops-image-oil" class="drops-image-oil">
           <img class="" src="https://profesorcbd.com/wp-content/uploads/2022/05/isolado.png">

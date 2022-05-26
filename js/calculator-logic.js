@@ -68,7 +68,7 @@ const values = {
       [
         {
           "name": "Duermo pero no descanso",
-          "description": "Una solución natural para mejorar la calidad de tu sueño #NoMorePastis.",
+          "description": "Toma desde hoy el control de tu sueño.",
           "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}`
@@ -82,7 +82,7 @@ const values = {
         },
         {
           "name": "Tengo insomnio, nada me va bien",
-          "description": "Duerme como antes de que todo se estropeara. Con este aceite, es cuestión de días.",
+          "description": "Somos muchos en tu misma situación. ¡Esto es lo que nos está ayudando!",
           "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}` 
@@ -103,14 +103,14 @@ const values = {
         },
         {
           "name": "Recuperar rápido después de un buen entreno",
-          "description": "Frena la inflamación generalizada con nuestras gotas anti-agujetas. ¡Mañana sí vuelves!",
+          "description": "Con nuestras gotas anti-agujetas mañana sí vuelves",
           "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
         },
         {
           "name": "Quiero descansar bien después de entrenar",
-          "description": "Este aceite bajará tus revoluciones de forma 100% natural.",
+          "description": "Para bajar las revoluciones, un resort en Tailandia… o nuestro aceite del buen",
           "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}` 
@@ -161,7 +161,7 @@ const values = {
       "result":
       [
         { 
-          "description": "Ni comer rabillos de pasas ni hacer sodukus: de las soluciones que avala la ciencia, este aceite es la más sencilla.",
+          "description": "¿Harto/a de comer rabillos de pasas y hacer sudokus? No nos extraña. ¡De este aceite no te cansarás!",
           "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}` 
@@ -189,7 +189,7 @@ const values = {
         },
         {
           "name": "Padezco dolores crónicos",
-          "description": "Si duele, que vuele.",
+          "description": "Somos muchos en tu misma situación. ¡Esto es lo que nos está ayudando!",
           "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
@@ -229,7 +229,7 @@ const createResult = (title, description, buy) => {
                       id=recommended-${title.replace(/\s+/g, '-')} 
                         class="drops-buy" 
                         type="button"
-                        value="Comprar" />
+                        value="¡Flechazo!" />
                     </a>
                    `
   return template
