@@ -33,130 +33,6 @@ const [cbd5URL, cbd5GabaURL, cbd10URL, cbd10GabaURL, cbd10MentaURL, cbd15URL, cb
 const [cbd5Text, cbd5GabaText, cbd10Text, cbd10GabaText, cbd10MentaText, cbd15Text, cbd30Text, nalaText] = text
 const values = {
   "focusResult": [
-    { 
-      "name": "Vitalidad",
-      "question": "¿Dónde te ves más identificado?",
-      "result": 
-      [
-        {
-          "name": "Estoy en un bache",
-          "description": "Tienes dos formas de pasar el bache: en bici o todoterreno. Este aceite es lo segundo.",
-          "oil": `${cbd10Text}`,
-          "img": `${urlIMG}${cbd10}`,
-          "buy": `${url}${cbd10URL}`,
-        },
-        {
-          "name": "Lo veo todo negro",
-          "description": "¡Estas gotas son experas en ahuyentar nubarrones!",
-          "oil": `${cbd15Text}`,
-          "img": `${urlIMG}${cbd15}`,
-          "buy": `${url}${cbd15URL}` 
-        },
-        {
-          "name": "Estoy bien pero podría estar mejor",
-          "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
-          "oil": `${cbd5Text}`,
-          "img": `${urlIMG}${cbd5}`,
-          "buy": `${url}${cbd5URL}` 
-        }
-      ]
-    },
-    { 
-      "name": "Sueño",
-      "question": "¿Cuál es tu problema de sueño?",
-      "result": 
-      [
-        {
-          "name": "Duermo pero no descanso",
-          "description": "Toma desde hoy el control de tu sueño.",
-          "oil": `${cbd10GabaText}`,
-          "img": `${urlIMG}${cbd10Gaba}`,
-          "buy": `${url}${cbd10GabaURL}`
-        },
-        {
-          "name": "Estoy empezando a dormir mal ahora",
-          "description": "No te resignes a contar ovejas. Con este aceite, sólo contarás gotas.",
-          "oil": `${cbd5GabaText}`,
-          "img": `${urlIMG}${cbd5Gaba}`,
-          "buy": `${url}${cbd5GabaURL}`
-        },
-        {
-          "name": "Tengo insomnio, nada me va bien",
-          "description": "Somos muchos en tu misma situación. ¡Esto es lo que nos está ayudando!",
-          "oil": `${cbd10GabaText}`,
-          "img": `${urlIMG}${cbd10Gaba}`,
-          "buy": `${url}${cbd10GabaURL}` 
-        }
-      ]
-    },
-    { 
-      "name": "Rendimiento Deportivo",
-      "question": "¿En qué quieres centrarte?",
-      "result": 
-      [
-        {
-          "name": "Descargar músculos después de entrenar",
-          "description": "Con este aceite, las piernas te irán solas… hasta las cañas post-gym.",
-          "oil": `${cbd10Text}`,
-          "img": `${urlIMG}${cbd10}`,
-          "buy": `${url}${cbd10URL}` 
-        },
-        {
-          "name": "Recuperar rápido después de un buen entreno",
-          "description": "Con nuestras gotas anti-agujetas mañana sí vuelves",
-          "oil": `${cbd15Text}`,
-          "img": `${urlIMG}${cbd15}`,
-          "buy": `${url}${cbd15URL}` 
-        },
-        {
-          "name": "Quiero descansar bien después de entrenar",
-          "description": "Para bajar las revoluciones, un resort en Tailandia… o nuestro aceite del buen",
-          "oil": `${cbd10GabaText}`,
-          "img": `${urlIMG}${cbd10Gaba}`,
-          "buy": `${url}${cbd10GabaURL}` 
-        }
-      ]
-    },
-    { 
-      "name": "Estrés/Ansiedad",
-      "question": "¿Cuál es el origen del estrés?",
-      "result": 
-      [
-        
-        {
-          "name": "Por una situación personal o laboral",
-          "description": "Se sabe que el chocolate y el CBD alivian el estrés. Pero el segundo no engorda. ¿Te animas?",
-          "oil": `${cbd10Text}`,
-          "img": `${urlIMG}${cbd10}`,
-          "buy": `${url}${cbd10URL}` 
-        },
-        {
-          "name": "Llevo angustiado muchísimo tiempo",
-          "description": "¡Tenenos las únicas gotas que descolman el vaso!",
-          "oil": `${cbd15Text}`,
-          "img": `${urlIMG}${cbd15}`,
-          "buy": `${url}${cbd15URL}` 
-        },
-        {
-          "name": "Estoy bien, pero me gustaria encontrarme mejor",
-          "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
-          "oil": `${cbd5Text}`,
-          "img": `${urlIMG}${cbd5}`,
-          "buy": `${url}${cbd5URL}` 
-        }
-      ]
-    },
-    { "name": "Inmunidad",
-      "result": 
-      [
-        {
-          "description": "El aceite que pondrá en guardia a tu sistema endocannabinoide. Stop virus.",
-          "oil": `${cbd5Text}`,
-          "img": `${urlIMG}${cbd5}`,
-          "buy": `${url}${cbd5URL}`  
-        }
-      ]
-    },
     { "name": "Concentración",
       "result":
       [
@@ -200,6 +76,130 @@ const values = {
           "oil": `${cbd30Text}`,
           "img": `${urlIMG}${cbd30}`,
           "buy": `${url}${cbd30URL}` 
+        }
+      ]
+    },
+    { 
+      "name": "Estrés/Ansiedad",
+      "question": "¿Cuál es el origen del estrés?",
+      "result": 
+      [
+        
+        {
+          "name": "Por una situación personal o laboral",
+          "description": "Se sabe que el chocolate y el CBD alivian el estrés. Pero el segundo no engorda. ¿Te animas?",
+          "oil": `${cbd10Text}`,
+          "img": `${urlIMG}${cbd10}`,
+          "buy": `${url}${cbd10URL}` 
+        },
+        {
+          "name": "Llevo angustiado muchísimo tiempo",
+          "description": "¡Tenenos las únicas gotas que descolman el vaso!",
+          "oil": `${cbd15Text}`,
+          "img": `${urlIMG}${cbd15}`,
+          "buy": `${url}${cbd15URL}` 
+        },
+        {
+          "name": "Estoy bien, pero me gustaria encontrarme mejor",
+          "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
+          "oil": `${cbd5Text}`,
+          "img": `${urlIMG}${cbd5}`,
+          "buy": `${url}${cbd5URL}` 
+        }
+      ]
+    },
+    { "name": "Inmunidad",
+      "result": 
+      [
+        {
+          "description": "El aceite que pondrá en guardia a tu sistema endocannabinoide. Stop virus.",
+          "oil": `${cbd5Text}`,
+          "img": `${urlIMG}${cbd5}`,
+          "buy": `${url}${cbd5URL}`  
+        }
+      ]
+    },
+    { 
+      "name": "Rendimiento Deportivo",
+      "question": "¿En qué quieres centrarte?",
+      "result": 
+      [
+        {
+          "name": "Descargar músculos después de entrenar",
+          "description": "Con este aceite, las piernas te irán solas… hasta las cañas post-gym.",
+          "oil": `${cbd10Text}`,
+          "img": `${urlIMG}${cbd10}`,
+          "buy": `${url}${cbd10URL}` 
+        },
+        {
+          "name": "Recuperar rápido después de un buen entreno",
+          "description": "Con nuestras gotas anti-agujetas mañana sí vuelves",
+          "oil": `${cbd15Text}`,
+          "img": `${urlIMG}${cbd15}`,
+          "buy": `${url}${cbd15URL}` 
+        },
+        {
+          "name": "Quiero descansar bien después de entrenar",
+          "description": "Para bajar las revoluciones, un resort en Tailandia… o nuestro aceite del buen",
+          "oil": `${cbd10GabaText}`,
+          "img": `${urlIMG}${cbd10Gaba}`,
+          "buy": `${url}${cbd10GabaURL}` 
+        }
+      ]
+    },
+    { 
+      "name": "Sueño",
+      "question": "¿Cuál es tu problema de sueño?",
+      "result": 
+      [
+        {
+          "name": "Duermo pero no descanso",
+          "description": "Toma desde hoy el control de tu sueño.",
+          "oil": `${cbd10GabaText}`,
+          "img": `${urlIMG}${cbd10Gaba}`,
+          "buy": `${url}${cbd10GabaURL}`
+        },
+        {
+          "name": "Estoy empezando a dormir mal ahora",
+          "description": "No te resignes a contar ovejas. Con este aceite, sólo contarás gotas.",
+          "oil": `${cbd5GabaText}`,
+          "img": `${urlIMG}${cbd5Gaba}`,
+          "buy": `${url}${cbd5GabaURL}`
+        },
+        {
+          "name": "Tengo insomnio, nada me va bien",
+          "description": "Somos muchos en tu misma situación. ¡Esto es lo que nos está ayudando!",
+          "oil": `${cbd10GabaText}`,
+          "img": `${urlIMG}${cbd10Gaba}`,
+          "buy": `${url}${cbd10GabaURL}` 
+        }
+      ]
+    },  
+    { 
+      "name": "Vitalidad",
+      "question": "¿Dónde te ves más identificado?",
+      "result": 
+      [
+        {
+          "name": "Estoy en un bache",
+          "description": "Tienes dos formas de pasar el bache: en bici o todoterreno. Este aceite es lo segundo.",
+          "oil": `${cbd10Text}`,
+          "img": `${urlIMG}${cbd10}`,
+          "buy": `${url}${cbd10URL}`,
+        },
+        {
+          "name": "Lo veo todo negro",
+          "description": "¡Estas gotas son experas en ahuyentar nubarrones!",
+          "oil": `${cbd15Text}`,
+          "img": `${urlIMG}${cbd15}`,
+          "buy": `${url}${cbd15URL}` 
+        },
+        {
+          "name": "Estoy bien pero podría estar mejor",
+          "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
+          "oil": `${cbd5Text}`,
+          "img": `${urlIMG}${cbd5}`,
+          "buy": `${url}${cbd5URL}` 
         }
       ]
     },
@@ -247,7 +247,6 @@ const getResult = (value, arr, beforeValue) => {
         const solution = result.result[j]
         if (solution.name == value) {
           visibility(resultOil, 'block');
-          // getDropsImageOil.style.visibility = 'visible' // cambiar por fadein
           resultOil.innerHTML = createResult(solution.oil, solution.description, solution.buy)
           getDropsImageOil.innerHTML = `<img class="drops-appear" src=${solution.img}></img>`
         }
@@ -263,7 +262,6 @@ const getQuestion = (value, arr) => {
       visibility(getTypeContent, 'block');
       visibility(resultOil, 'none');
       appear();
-      // getDropsImageOil.style.visibility = 'hidden' // cambiar por fadeout
       getType.innerHTML = `<h3>${result.question}</h3>`
       createOptions(getTypeSelect, result.result)
     }
