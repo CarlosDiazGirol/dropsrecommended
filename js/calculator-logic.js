@@ -140,7 +140,7 @@ const values = {
         },
         {
           "name": "Quiero descansar bien después de entrenar",
-          "description": "Para bajar las revoluciones, un resort en Tailandia… o nuestro aceite del buen",
+          "description": "Para bajar las revoluciones, un resort en Tailandia… o nuestro aceite del buen descanso",
           "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}` 
@@ -226,7 +226,7 @@ const createResult = (title, description, buy) => {
                     <p>${description}</p>
                     <a href=${buy} target="_blank">
                       <input
-                      id=recommended-${title.replace(/\s+/g, '-')} 
+                      id=recommended-${title.replace(/\s+/g, '-')}
                         class="drops-buy" 
                         type="button"
                         value="¡Flechazo!" />
