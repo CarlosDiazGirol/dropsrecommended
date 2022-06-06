@@ -127,9 +127,9 @@ const values = {
         {
           "name": "Descargar músculos después de entrenar",
           "description": "Con este aceite, las piernas te irán solas… hasta las cañas post-gym.",
-          "oil": `${cbd10Text}`,
-          "img": `${urlIMG}${cbd10}`,
-          "buy": `${url}${cbd10URL}` 
+          "oil": `${cbd10MentaText}`,
+          "img": `${urlIMG}${cbd10Menta}`,
+          "buy": `${url}${cbd10MentaURL}` 
         },
         {
           "name": "Recuperar rápido después de un buen entreno",
