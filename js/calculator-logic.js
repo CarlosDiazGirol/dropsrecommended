@@ -6,18 +6,19 @@ const resultOil = document.getElementById("resultOil")
 const getDropsImageOil = document.getElementById("drops-image-oil")
 
 const url = "https://profesorcbd.com"
+const utm = "?utm_medium=display&utm_source=calculadorarecomendador&utm_campaign=10072023_compratuaceite&utm_content=boton_"
 const urlIMG = `${url}/wp-content/uploads/2022/03/`
 const images = ["5-2.png", "5gaba.png", "10-3.png", "10gaba.png", "10menta.png", "15-2.png", "30-2.png", "nala.png"]
 const [cbd5, cbd5Gaba, cbd10, cbd10Gaba, cbd10Menta, cbd15, cbd30, nala] = images
 const urls = [
-  "/aceite-cbd-premium-hakuna-oil-5-full-spectrum-base-mct/",
-  "/aceite-cbd-5-premium-hakuna-oil-buenas-nochezzz-con-gaba/",
-  "/aceite-cbd-premium-hakuna-oil-al-10-full-spectrum-con-base-mct/",
-  "/aceite-cbd-10-premium-hakuna-oil-buenas-nochezzz-con-gaba/",
-  "/aceite-cbd-premium-hakuna-oil-al-10-con-aroma-a-menta/",
-  "/aceite-cbd-premium-hakuna-oil-al-15-full-spectrum-con-base-mct/",
-  "/aceite-cbd-premium-hakuna-oil-al-30-full-spectrum-con-base-mct/",
-  "/aceite-de-cbd-para-mascotas-isolado-sin-thc-nalatales/"
+  `/aceite-cbd-premium-hakuna-oil-5-full-spectrum-base-mct/${utm}aceiteFS5`, 
+  `/aceite-cbd-5-premium-hakuna-oil-buenas-nochezzz-con-gaba/${utm}buenasnochez5`,
+  `/aceite-cbd-premium-hakuna-oil-al-10-full-spectrum-con-base-mct/${utm}aceiteFS10`,
+  `/aceite-cbd-10-premium-hakuna-oil-buenas-nochezzz-con-gaba/${utm}buenasnochez10`,
+  `/aceite-cbd-premium-hakuna-oil-al-10-con-aroma-a-menta/${utm}aceitementa`,
+  `/aceite-cbd-premium-hakuna-oil-al-15-full-spectrum-con-base-mct/${utm}FS15`,
+  `/aceite-cbd-premium-hakuna-oil-al-30-full-spectrum-con-base-mct/${utm}FS30`,
+  `/aceite-de-cbd-para-mascotas-isolado-sin-thc-nalatales/${utm}nala`
 ]
 const text = [
   "Full Sprectrum 5%",
@@ -33,11 +34,11 @@ const [cbd5URL, cbd5GabaURL, cbd10URL, cbd10GabaURL, cbd10MentaURL, cbd15URL, cb
 const [cbd5Text, cbd5GabaText, cbd10Text, cbd10GabaText, cbd10MentaText, cbd15Text, cbd30Text, nalaText] = text
 const values = {
   "focusResult": [
-    { "name": "Concentración",
+    { "name": "Me siento dispers@",
       "result":
       [
         { 
-          "description": "¿Harto/a de comer rabillos de pasas y hacer sudokus? No nos extraña. ¡De este aceite no te cansarás!",
+          "description": "El empujoncito que necesitas en forma de aceite. Stop desidia.",
           "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}` 
@@ -45,33 +46,33 @@ const values = {
       ]
     },
     { 
-      "name": "Dolores",
+      "name": "Son muchas cosas. ¿Por dónde empiezo?",
       "question": "¿En qué consiste ese dolor?",
       "result": 
       [
         {
-          "name": "Son molestias articulares",
-          "description": "La vida con dolor de rodillas es la vida peor. Mejora la tuya con este aceite.",
-          "oil": `${cbd10Text}`,
-          "img": `${urlIMG}${cbd10}`,
-          "buy": `${url}${cbd10URL}` 
-        },
-        {
-          "name": "Son los dolores menstruales",
-          "description": "¿Tú qué tienes: sistema endocannabinoide o sistema ibuprofenoide? Pues eso.",
+          "name": "Ay",
+          "description": "El empujoncito que necesitas.",
           "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}` 
         },
         {
-          "name": "Padezco dolores crónicos",
-          "description": "Somos muchos en tu misma situación. ¡Esto es lo que nos está ayudando!",
+          "name": "Ay, ay",
+          "description": "Mejora tu vida con este aceite",
+          "oil": `${cbd10Text}`,
+          "img": `${urlIMG}${cbd10}`,
+          "buy": `${url}${cbd10URL}` 
+        },
+        {
+          "name": "Ay, ay, ay",
+          "description": "Somos muchos en tu misma situación. ¡Esto es lo que nos está ayudando!.",
           "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
         },
         {
-          "name": "Son molestias muy severas",
+          "name": "Ay, ay, ay, ay",
           "description": "Prueba nuestro aceite de las grandes soluciones.",
           "oil": `${cbd30Text}`,
           "img": `${urlIMG}${cbd30}`,
@@ -80,39 +81,39 @@ const values = {
       ]
     },
     { 
-      "name": "Estrés/Ansiedad",
-      "question": "¿Cuál es el origen del estrés?",
+      "name": "Me siento agobiad@",
+      "question": "¿Qué frase te define mejor?",
       "result": 
       [
         
         {
-          "name": "Por una situación personal o laboral",
-          "description": "Se sabe que el chocolate y el CBD alivian el estrés. Pero el segundo no engorda. ¿Te animas?",
+          "name": "Sé que pasará, pero...",
+          "description": "Del 'jo' al 'ja' en tres gotas. ¿Te animas?",
           "oil": `${cbd10Text}`,
           "img": `${urlIMG}${cbd10}`,
           "buy": `${url}${cbd10URL}` 
         },
         {
-          "name": "Llevo angustiado muchísimo tiempo",
+          "name": "Lo veo todo negro",
           "description": "¡Tenenos las únicas gotas que descolman el vaso!",
           "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
         },
         {
-          "name": "Estoy bien, pero me gustaria encontrarme mejor",
-          "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
+          "name": "Estoy casi bien. ¿Me ayudáis a quitar el 'casi'?",
+          "description": "Sube de nivel incorporando este aceite en tu rutina diaria.",
           "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}` 
         }
       ]
     },
-    { "name": "Inmunidad",
+    { "name": "No me pasa nada, pero...",
       "result": 
       [
         {
-          "description": "El aceite que pondrá en guardia a tu sistema endocannabinoide. Stop virus.",
+          "description": "El empujoncito que necesitas en forma de aceite. Stop desidia.",
           "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}`  
@@ -133,14 +134,14 @@ const values = {
         },
         {
           "name": "Recuperar rápido después de un buen entreno",
-          "description": "Con nuestras gotas anti-agujetas mañana sí vuelves",
+          "description": "Con nuestras estas gotas mañana sí vuelves al gym.",
           "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
         },
         {
-          "name": "Quiero descansar bien después de entrenar",
-          "description": "Para bajar las revoluciones, un resort en Tailandia… o nuestro aceite del buen descanso",
+          "name": "Acabo demasiado inquieto después del entreno.",
+          "description": "Para bajar las revoluciones, un resort en Tailandia… o nuestra línea BuenasNochezzz.",
           "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}` 
@@ -148,30 +149,23 @@ const values = {
       ]
     },
     { 
-      "name": "Sueño",
-      "question": "¿Cuál es tu problema de sueño?",
+      "name": "¿No ves mis ojeras?",
+      "question": "¿Cuál es la intensidad de tu problema?",
       "result": 
       [
         {
-          "name": "Duermo pero no descanso",
-          "description": "Toma desde hoy el control de tu sueño.",
+          "name": "Alta o media alta.",
+          "description": "Somos muchos en tu misma situación. ¡Esto es lo que nos está ayudando!",
           "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}`
         },
         {
-          "name": "Estoy empezando a dormir mal ahora",
-          "description": "No te resignes a contar ovejas. Con este aceite, sólo contarás gotas.",
+          "name": "Baja o media baja.",
+          "description": "Toma desde hoy el control de tu bienestar.",
           "oil": `${cbd5GabaText}`,
           "img": `${urlIMG}${cbd5Gaba}`,
           "buy": `${url}${cbd5GabaURL}`
-        },
-        {
-          "name": "Tengo insomnio, nada me va bien",
-          "description": "Somos muchos en tu misma situación. ¡Esto es lo que nos está ayudando!",
-          "oil": `${cbd10GabaText}`,
-          "img": `${urlIMG}${cbd10Gaba}`,
-          "buy": `${url}${cbd10GabaURL}` 
         }
       ]
     },  
@@ -189,7 +183,7 @@ const values = {
         },
         {
           "name": "Lo veo todo negro",
-          "description": "¡Estas gotas son experas en ahuyentar nubarrones!",
+          "description": "¡Estas gotas son expertas en ahuyentar nubarrones!",
           "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
@@ -278,10 +272,10 @@ const createOptions = (id, arr) => {
 const createType = (value, arr, beforeValue) => {
   switch(value) {
     case "Vitalidad":
-    case "Sueño":
+    case "¿No ves mis ojeras?":
     case "Rendimiento Deportivo":
-    case "Estrés/Ansiedad":
-    case "Dolores":
+    case "Me siento agobiad@":
+    case "Son muchas cosas. ¿Por dónde empiezo?":
       getQuestion(value, arr)
     break;
     default:
