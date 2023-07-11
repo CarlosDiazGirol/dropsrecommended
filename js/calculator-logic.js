@@ -47,7 +47,7 @@ const values = {
     // },
     { 
       "name": "Son muchas cosas. ¿Por dónde empiezo?",
-      "question": "¿En qué consiste ese dolor?",
+      "question": "¿Cuál de estas expresiones te define?",
       "result": 
       [
         {
