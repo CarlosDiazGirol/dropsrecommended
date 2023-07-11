@@ -134,7 +134,7 @@ const values = {
         },
         {
           "name": "Recuperar rápido después de un buen entreno",
-          "description": "Con nuestras estas gotas mañana sí vuelves al gym.",
+          "description": "Con estas gotas mañana sí vuelves al gym.", 
           "oil": `${cbd15Text}`,
           "img": `${urlIMG}${cbd15}`,
           "buy": `${url}${cbd15URL}` 
