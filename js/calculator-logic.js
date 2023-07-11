@@ -34,17 +34,17 @@ const [cbd5URL, cbd5GabaURL, cbd10URL, cbd10GabaURL, cbd10MentaURL, cbd15URL, cb
 const [cbd5Text, cbd5GabaText, cbd10Text, cbd10GabaText, cbd10MentaText, cbd15Text, cbd30Text, nalaText] = text
 const values = {
   "focusResult": [
-    { "name": "Me siento dispers@",
-      "result":
-      [
-        { 
-          "description": "El empujoncito que necesitas en forma de aceite. Stop desidia.",
-          "oil": `${cbd5Text}`,
-          "img": `${urlIMG}${cbd5}`,
-          "buy": `${url}${cbd5URL}` 
-        }
-      ]
-    },
+    // { "name": "Me siento dispers@",
+    //   "result":
+    //   [
+    //     { 
+    //       "description": "El empujoncito que necesitas en forma de aceite. Stop desidia.",
+    //       "oil": `${cbd5Text}`,
+    //       "img": `${urlIMG}${cbd5}`,
+    //       "buy": `${url}${cbd5URL}` 
+    //     }
+    //   ]
+    // },
     { 
       "name": "Son muchas cosas. ¿Por dónde empiezo?",
       "question": "¿En qué consiste ese dolor?",
@@ -113,7 +113,7 @@ const values = {
       "result": 
       [
         {
-          "description": "El empujoncito que necesitas en forma de aceite. Stop desidia.",
+          "description": "El empujoncito que necesitas en forma de aceite.",
           "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}`  
@@ -141,7 +141,7 @@ const values = {
         },
         {
           "name": "Acabo demasiado inquieto después del entreno.",
-          "description": "Para bajar las revoluciones, un resort en Tailandia… o nuestra línea BuenasNochezzz.",
+          "description": "Un resort en Tailandia… o nuestra línea BuenasNochezzz.",
           "oil": `${cbd10GabaText}`,
           "img": `${urlIMG}${cbd10Gaba}`,
           "buy": `${url}${cbd10GabaURL}` 
@@ -149,7 +149,7 @@ const values = {
       ]
     },
     { 
-      "name": "¿No ves mis ojeras?",
+      "name": "Necesito un punto zen",
       "question": "¿Cuál es la intensidad de tu problema?",
       "result": 
       [
@@ -170,7 +170,7 @@ const values = {
       ]
     },  
     { 
-      "name": "Vitalidad",
+      "name": "Sólo quiero sentirme mejor",
       "question": "¿Dónde te ves más identificado?",
       "result": 
       [
@@ -190,7 +190,7 @@ const values = {
         },
         {
           "name": "Estoy bien pero podría estar mejor",
-          "description": "Sube de nivel con este aceite: la rutina diaria que logrará tu equilibrio.",
+          "description": "Sube de nivel incorporando este aceite a tu rutina diaria.",
           "oil": `${cbd5Text}`,
           "img": `${urlIMG}${cbd5}`,
           "buy": `${url}${cbd5URL}` 
@@ -271,8 +271,8 @@ const createOptions = (id, arr) => {
 
 const createType = (value, arr, beforeValue) => {
   switch(value) {
-    case "Vitalidad":
-    case "¿No ves mis ojeras?":
+    case "Sólo quiero sentirme mejor":
+    case "Necesito un punto zen":
     case "Rendimiento Deportivo":
     case "Me siento agobiad@":
     case "Son muchas cosas. ¿Por dónde empiezo?":
