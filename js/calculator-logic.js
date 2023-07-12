@@ -12,9 +12,9 @@ const images = ["5-2.png", "5gaba.png", "10-3.png", "10gaba.png", "10menta.png",
 const [cbd5, cbd5Gaba, cbd10, cbd10Gaba, cbd10Menta, cbd15, cbd30, nala] = images
 const urls = [
   `/aceite-cbd-premium-hakuna-oil-5-full-spectrum-base-mct/${utm}aceiteFS5`, 
-  `/aceite-cbd-5-premium-hakuna-oil-buenas-nochezzz-con-gaba/${utm}buenasnochez5`,
+  `/aceite-cbd-5-premium-hakuna-oil-con-gaba/${utm}buenasnochez5`,
   `/aceite-cbd-premium-hakuna-oil-al-10-full-spectrum-con-base-mct/${utm}aceiteFS10`,
-  `/aceite-cbd-10-premium-hakuna-oil-buenas-nochezzz-con-gaba/${utm}buenasnochez10`,
+  `/aceite-cbd-10-premium-hakuna-oil-con-gaba/${utm}buenasnochez10`,
   `/aceite-cbd-premium-hakuna-oil-al-10-con-aroma-a-menta/${utm}aceitementa`,
   `/aceite-cbd-premium-hakuna-oil-al-15-full-spectrum-con-base-mct/${utm}FS15`,
   `/aceite-cbd-premium-hakuna-oil-al-30-full-spectrum-con-base-mct/${utm}FS30`,
